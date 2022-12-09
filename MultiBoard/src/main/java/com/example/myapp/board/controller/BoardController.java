@@ -43,10 +43,10 @@ public class BoardController {
 	@RequestMapping("/board/cat/{categoryId}/{page}")
 	public String getListByCategory(@PathVariable int categoryId, @PathVariable int page, HttpSession session, Model model) {
 		session.setAttribute("page", page);
-//		model.addAttribute("categoryId", categoryId);
+		model.addAttribute("categoryId", categoryId);
 
 		List<Board> boardList = boardService.selectArticleListByCategory(categoryId, page);
-//		model.addAttribute("boardList", boardList);
+		model.addAttribute("boardList", boardList);
 
 		// paging start
 		int bbsCount = boardService.selectTotalArticleCountByCategoryId(categoryId);
