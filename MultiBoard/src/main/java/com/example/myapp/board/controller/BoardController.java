@@ -46,7 +46,7 @@ public class BoardController {
 		model.addAttribute("categoryId", categoryId);
 
 		List<Board> boardList = boardService.selectArticleListByCategory(categoryId, page);
-		model.addAttribute("boardList", boardList);
+//		model.addAttribute("boardList", boardList);
 
 		// paging start
 		int bbsCount = boardService.selectTotalArticleCountByCategoryId(categoryId);
