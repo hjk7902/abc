@@ -36,7 +36,7 @@ public class BoardController {
 //
 	@Autowired
 	IBoardService boardService;
-	
+
 	@Autowired
 	IBoardCategoryService categoryService;
  
