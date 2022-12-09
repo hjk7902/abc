@@ -33,7 +33,7 @@ import com.example.myapp.board.service.IBoardService;
 @Controller
 public class BoardController {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
-
+//
 	@Autowired
 	IBoardService boardService;
 	
