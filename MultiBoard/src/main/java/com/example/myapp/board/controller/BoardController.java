@@ -186,8 +186,8 @@ public class BoardController {
 		logger.info("/board/update " + board.toString());
 		String dbPassword = boardService.getPassword(board.getBoardId());
 		if(!board.getPassword().equals(dbPassword)) {
-//			throw new RuntimeException("게시�? 비�?번호�? ?��릅니?��.");
-			redirectAttrs.addFlashAttribute("passwordError", "게시�? 비�?번호�? ?��릅니?��");
+//			throw new RuntimeException("게시글 비밀번호가 다릅니다.");
+			redirectAttrs.addFlashAttribute("passwordError", "게시글 비밀번호가 다릅니다");
 			return "redirect:/board/update/" + board.getBoardId();
 		}
 		try{
@@ -248,7 +248,7 @@ public class BoardController {
 			List<Board> boardList = boardService.searchListByContentKeyword(keyword, page);
 			model.addAttribute("boardList", boardList);
 	
-			// �??�� 결과 ?��?���? 처리
+			// 검색 결과 페이징 처리
 			int bbsCount = boardService.selectTotalArticleCountByKeyword(keyword);
 			int totalPage = 0;
 
