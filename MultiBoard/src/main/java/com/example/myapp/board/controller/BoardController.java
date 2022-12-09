@@ -186,8 +186,8 @@ public class BoardController {
 		logger.info("/board/update " + board.toString());
 		String dbPassword = boardService.getPassword(board.getBoardId());
 		if(!board.getPassword().equals(dbPassword)) {
-//			throw new RuntimeException("ê²Œì‹œê¸? ë¹„ë?ë²ˆí˜¸ê°? ?‹¤ë¦…ë‹ˆ?‹¤.");
-			redirectAttrs.addFlashAttribute("passwordError", "ê²Œì‹œê¸? ë¹„ë?ë²ˆí˜¸ê°? ?‹¤ë¦…ë‹ˆ?‹¤");
+//			throw new RuntimeException("ê²Œì‹œï¿½? ë¹„ï¿½?ë²ˆí˜¸ï¿½? ?ï¿½ï¿½ë¦…ë‹ˆ?ï¿½ï¿½.");
+			redirectAttrs.addFlashAttribute("passwordError", "ê²Œì‹œï¿½? ë¹„ï¿½?ë²ˆí˜¸ï¿½? ?ï¿½ï¿½ë¦…ë‹ˆ?ï¿½ï¿½");
 			return "redirect:/board/update/" + board.getBoardId();
 		}
 		try{
@@ -248,7 +248,7 @@ public class BoardController {
 			List<Board> boardList = boardService.searchListByContentKeyword(keyword, page);
 			model.addAttribute("boardList", boardList);
 	
-			// ê²??ƒ‰ ê²°ê³¼ ?˜?´ì§? ì²˜ë¦¬
+			// ï¿½??ï¿½ï¿½ ê²°ê³¼ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ì²˜ë¦¬
 			int bbsCount = boardService.selectTotalArticleCountByKeyword(keyword);
 			int totalPage = 0;
 
