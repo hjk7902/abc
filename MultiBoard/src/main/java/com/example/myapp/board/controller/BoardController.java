@@ -39,7 +39,7 @@ public class BoardController {
 	
 	@Autowired
 	IBoardCategoryService categoryService;
-
+ 
 	@RequestMapping("/board/cat/{categoryId}/{page}")
 	public String getListByCategory(@PathVariable int categoryId, @PathVariable int page, HttpSession session, Model model) {
 		session.setAttribute("page", page);
